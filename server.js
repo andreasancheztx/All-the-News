@@ -9,6 +9,7 @@ var PORT = process.env.PORT || 3000;
 // var PORT = 3000;
 
 // Initialize Express
+var express = require("express");
 var app = express();
 
 // Configure middleware
@@ -23,9 +24,10 @@ app.use(express.static("public"));
 
 // Connect to the Mongo DB
 // If deployed, use the deployed database. Otherwise use the local mongoHeadlines database
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/allthenews";
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/allthenews");
+var db = mongoose.connection;
 
 // Handlebars
 app.engine(
@@ -42,5 +44,5 @@ require("./routes/htmlRoutes")(app);
 
 // Start the server
 app.listen(PORT, function () {
-    console.log("App running on port " + PORT + "!");
+    console.log("Listening on PORT " + PORT + "!");
 });
