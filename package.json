@@ -1,7 +1,7 @@
 {
     "name": "mongoose_skeleton",
     "version": "1.0.0",
-    "description": "Corpus Christi News",
+    "description": "All the News",
     "main": "server.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
@@ -16,7 +16,7 @@
         "dotenv": "^8.2.0",
         "express": "^4.17.1",
         "express-handlebars": "^4.0.4",
-        "mongoose": "^5.9.15",
+        "mongoose": "^5.9.19",
         "morgan": "^1.10.0",
         "nodemon": "^2.0.4"
     }

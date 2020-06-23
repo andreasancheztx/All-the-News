@@ -1,0 +1,61 @@
+{{>nav}}
+<div class="container-fluid">
+  <div class="row">
+    <div class="parallax-container">
+      <div class="centered">
+        <h1>Corpus Christi News Scraper</h1>
+        {{!-- <img style="height:100px" src="/images/ccbay.jpg" class="responsive-img"> --}}
+      </div>
+      <div class="parallax"><img src="/images/ccbay.jpg">
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-fluid">
+  <div id="articles">
+    {{#if article}}
+    {{#each article}}
+    <div data-id="{{this._id}}" class='row'>
+      <div class='col s12'>
+        <div class='card black darken-1'>
+          <div class='card-content white-text'> <span class='card-title'><a target="_blank"
+                href="{{this.link}}">{{this.title}}</a></span>{{this.summary}} <br />
+          </div>
+          <div class='card-action'>
+            <a data-id="{{this._id}}" class='waves-effect waves-light btn save'>Save Article</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    {{/each}}
+    {{else}}
+  </div>
+
+  <div class="row">
+    <div class="col s12">
+      <div class="card black darken-1">
+        <div class="card-content white-text">
+          <span class="card-title">
+            <h4> There are no saved articles.</h4>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col s12">
+      <div class="card black darken-1">
+        <div class="card-content white-text">
+          <span class="card-title">
+            <h4>What would you like to do?</h4>
+          </span>
+          <h5><a class="btn scrape">Scrape articles</a></h5>
+          <h5><a href="/saved">Go to saved articles</a></h5>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {{/if}}
+  {{>footer}}
+  {{>footer_scripts}}
